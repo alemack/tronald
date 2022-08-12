@@ -37,32 +37,14 @@ curl_close($curl);
 if ($err) {
 	echo "cURL Error #:" . $err;
 } else {
-	echo $response;
-    echo "<br> <br> ---- <br> <br>";
     $a = $response;
-    var_dump($a);
-    echo "<br> <br> ---- <br> <br>";
+   // var_dump($a);
     $b = strlen($response);
-    var_dump($b);
-    echo "<br> <br> ---- <br> <br>";
+   // var_dump($b);
     $pos1 = strpos($response, 'value');
-    echo $pos1;
-    echo $response[$pos1];
-    echo "<br> <br> ---- <br> <br>";
     $posA = $pos1+7;
-    echo $response[$pos1+7]; // __________________________________--------------------------_______________________
-    echo $response[$pos1+8];
-    echo $response[$pos1+9];  
-    echo $response[$pos1+10];
-    echo "<br> <br> ---- <br> <br>";
     $pos = strpos($response, "_embedded", $pos1);
-    echo $pos;
     $posB = $pos-2;
-    echo $response[$pos-6];
-    echo $response[$pos-5];
-    echo $response[$pos-4];
-    echo $response[$pos-3];
-    echo "<br> <br> ---- <br> <br>";
     $posB = $posB - $posA;
     $res = substr($response, $posA, $posB);
     echo $res;
